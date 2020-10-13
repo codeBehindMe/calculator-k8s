@@ -16,6 +16,7 @@ spec:
       containers:
         - name: multiplier
           image: gcr.io/soa-calc/calculator/multiplier:latest
+          imagePullPolicy: Always
 ---
 apiVersion: v1
 kind: Service
