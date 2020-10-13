@@ -18,14 +18,14 @@ spec:
         - name: calculator
           image: gcr.io/soa-calc/calculator/calculator:latest
           args:
-            - adder=adder
+            - multiplier=multiplier-svc.default.svc.cluster.local:3000
           ports:
             - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: calculator-service
+  name: calculator-svc
 spec:
   selector:
     app: calculator
