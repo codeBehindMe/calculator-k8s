@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: factorialiser
+  labels:
+    app: factorialiser
+spec:
+  selector:
+    matchLabels:
+      app: factorialiser
+  template:
+    metadata:
+      labels:
+        app: factorialiser
+    spec:
+      containers:
+        - name: factorialiser
+          image: gcr.io/soa-calc/calculator/factorialiser:latest
+          args:
+            - multiplier=multiplier:3000
+          ports:
+            - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: factorialiser-service
+spec:
+  selector:
+    app: factorialiser
+  ports:
+    - port: 3000
+      protocol: TCP
+      targetPort: 3000

@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: multiplier
+  labels:
+    app: multiplier
+spec:
+  selector:
+    matchLabels:
+      app: multiplier
+  template:
+    metadata:
+      labels:
+        app: multiplier
+    spec:
+      containers:
+        - name: multiplier
+          image: gcr.io/soa-calc/calculator/multiplier:latest
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: multiplier-service
+spec:
+  selector:
+    app: multiplier
+  ports:
+    - port: 3000
+      protocol: TCP
+      targetPort: 3000
