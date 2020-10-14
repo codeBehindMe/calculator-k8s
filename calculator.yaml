@@ -19,7 +19,7 @@ spec:
           image: gcr.io/soa-calc/calculator/calculator:latest
           imagePullPolicy: Always
           args:
-            - multiplier=multiplier-svc.default.svc.cluster.local:3000
+            - "-multiplier=multiplier-svc.default.svc.cluster.local:3000"
           ports:
             - containerPort: 80
 ---
