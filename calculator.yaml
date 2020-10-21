@@ -1,6 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  namespace: calculator
   name: calculator
   labels:
     app: calculator
@@ -26,6 +27,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
+  namespace: calculator
   name: calculator-svc
 spec:
   selector:

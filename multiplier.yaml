@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: multiplier
+  namespace: calculator
   labels:
     app: multiplier
 spec:
@@ -21,6 +22,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
+  namespace: calculator
   name: multiplier-svc
 spec:
   selector:
