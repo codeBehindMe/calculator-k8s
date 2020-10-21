@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: factorialiser
+  namespace: calculator
   labels:
     app: factorialiser
 spec:
@@ -24,6 +25,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
+  namespace: calculator
   name: factorialiser-svc
 spec:
   selector:
