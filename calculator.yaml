@@ -20,9 +20,15 @@ spec:
           image: gcr.io/soa-calc/calculator/calculator:latest
           imagePullPolicy: Always
           args:
-            - "-multiplier=multiplier-svc.default.svc.cluster.local:3000"
+            - "-multiplier=$(MULTIPLIER_RPC_DNS)"
           ports:
             - containerPort: 80
+          env:
+            - name: MULTIPLIER_RPC_DNS
+              valueFrom:
+                configMapKeyRef:
+                  name: service-config
+                  key: multiplier.rpc.dns
 ---
 apiVersion: v1
 kind: Service
