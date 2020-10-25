@@ -1,0 +1,4 @@
+commonLabels:
+  envLevel: prod
+bases:
+  - ../base
