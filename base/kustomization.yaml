@@ -1,0 +1,9 @@
+commonLabels:
+  envLevel: dev
+namespace: calculator
+resources:
+  - calculator.yaml
+  - factorialiser.yaml
+  - multiplier.yaml
+  - namespace.yaml
+  - service_config.yaml
