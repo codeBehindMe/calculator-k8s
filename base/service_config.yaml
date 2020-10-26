@@ -4,5 +4,5 @@ metadata:
   name: service-config
   namespace: calculator
 data:
-  multiplier.rpc.dns: multiplier-svc.calculator.svc.cluster.local:3000
-  factorialiser.rpc.dns: factorialiser-svc.calculator.svc.cluster.local:3000
+  multiplier.rpc.dns: multiplier-svc:3000
+  factorialiser.rpc.dns: factorialiser-svc:3000
